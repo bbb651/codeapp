@@ -1,4 +1,4 @@
-name: Build & Deploy to TestFlight
+name: Build
 on:
   push:
     branches: [main]
@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
 
       - name: Build iOS Beta via Fastlane
-        run: fastlane gym
+        run: bundle exec fastlane gym
         env:
           JUDGE0_KEY: ""
           JUDGE0_ENDPOINT: ""
